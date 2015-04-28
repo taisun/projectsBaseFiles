@@ -1,0 +1,540 @@
+/*doc
+---
+title: Typography
+name: Typography
+category: Components CSS
+---
+
+基本的なフォントは以下になります。
+
+使用フォント                                                                                                   | 単位          | ベースサイズ
+------------------------------------------------------------------------------------------------------------ |------------- | -----------
+font-family:'Lucida Grande', 'Hiragino Kaku Gothic ProN', 'ヒラギノ角ゴ ProN W3', Meiryo, メイリオ, sans-serif; | px（ピクセル） | 14px
+
+<br>
+テキストのマークアップ＆デザインです。
+
+```html_example_table
+<p>基本のてきすと</p>
+
+<p class="u-err">エラーテキスト</p>
+
+<p><strong>太字テキスト</strong></p>
+
+<p><small>サブテキスト</small></p>
+
+```
+<br>
+
+###注釈
+
+注釈のマークアップです。
+
+```html_example
+<dl class="c-annotation">
+	<dt>※</dt><dd>テキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</dd>
+</dl>
+```
+
+###定義文1
+```html_example
+<dl class="c-definition">
+	<dt>賃貸・管理部門の営業</dt>
+	<dd>店頭にご来店いただいたお客様やインターネットに掲載している物件の反響、電話によるお問い合わせからこの仕事はスタート。もちろん、これ以前に物件オーナー様と募集方法の提案（家賃設定やリフォームなど）を行なっていきます。これらとは別に、物件オーナー様が所有している物件の空き室対策や賃貸経営の代行業務なども将来的にはお任せするつもりです。</dd>
+</dl>
+```
+
+###定義文2
+```html_example
+<dl class="c-definitionTbl">
+	<dt class="c-definitionTbl__title"><span>対象となる方</span></dt>
+	<dd class="c-definitionTbl__body">
+		<ol>
+			<li>
+				<span class="c-definitionTbl__num">（1）</span>
+				<span class="c-definitionTbl__txt">
+					未経験大歓迎、宅地建物取引主任者優遇、要普通免許。<br>
+		  		 	※基本的なPC操作のできる方。<br>
+		 	       	※不動産業界で成功したいとおもっている方、<br>
+		      		宅建やＦＰの資格取得を目指している方、大歓迎。
+				</span>
+			</li>
+			<li>
+				<span class="c-definitionTbl__num">（2）</span>
+				<span class="c-definitionTbl__txt">事務経験者</span>
+			</li>
+			<li>
+				<span class="c-definitionTbl__num">（3）</span>
+				<span class="c-definitionTbl__txt">
+					広報（社内外向け）や営業推進、企画部門での経験者。<br>
+			        IllustratorやPhotoshopを扱える方。<br>
+					（実務未経験も可、少しかじったことがあるレベルでも構いません）
+				</span>
+			</li>
+		</ol>
+	</dd>
+</dl>
+<dl class="c-definitionTbl">
+	<dt class="c-definitionTbl__title"><span>勤務地</span></dt>
+	<dd class="c-definitionTbl__body">
+		東京都渋谷区恵比寿西1-10-10若葉西ビル7F
+	</dd>
+</dl>
+```
+
+###お問い合わせテキスト
+
+```html_example
+<p class="c-contactTxt">
+	<small>お電話でのお問い合わせもお気軽にどうぞ</small>
+	<strong>TEL:03-6455-3993</strong>
+</p>
+```
+
+###囲み
+
+```html_example
+<div class="c-infoNote">
+	<div class="c-infoNote__inner">
+		<p>テキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+	</div>
+</div>
+```
+
+ */
+/*doc
+---
+title: Top other
+name: Top other
+category: Top
+---
+
+###囲み1
+
+```html_example
+<div class="c-infoTop">
+		<p>テキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+</div>
+```
+
+###囲み2
+
+```html_example
+<div class="c-infoTop__Qa">
+		<p>テキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+</div>
+```
+ */
+.c-annotation {
+	background: transparent;
+	dt {
+		float: left;
+		padding: 0 0;
+		font-weight: normal;
+		text-indent: 0em;
+	}
+	dd {
+		padding: 0 0 0 1.25em;
+		margin: 0;
+	}
+}
+.c-{
+	@at-root {
+		#{&}infoNote {
+			background-image: url("../img/common/border.jpg");
+			padding: 4px;
+			width: 642px;
+			clear: both;
+			@at-root {
+				#{&}__inner{
+					background: #fff;
+					padding: 10px 0;
+					width: 100%;
+  					display: table;
+				}
+				%layouts {
+					display: inline-block;
+  					vertical-align: middle;
+  					float: left;
+				}
+				#{&}__right{
+					width: 342px;
+					@extend %layouts;
+				}
+				#{&}__left{
+					width: 300px;
+					@extend %layouts;
+					img {
+						margin-top: 10px;
+					}
+				}
+			}
+		}
+		#{&}infoTop {
+			border: 1px solid #ddd;
+			padding: 20px 25px;
+			width: 890px;
+			background: url("../img/top/img_top02.jpg") no-repeat right top;
+			dt {
+				font-size: 18px;
+				margin-bottom: 15px;
+			}
+			dd {
+				line-height: 1.5;
+				font-size: 14px;
+			}
+			@at-root {
+				#{&}__Qa {
+					border: 1px dotted #b7b7b7;
+					padding: 8px;
+					width: 204px;
+					height: 140px;
+					&.first {
+						margin-left: 0;
+					}
+					&.last {
+
+					}
+				}
+			}
+		}
+		#{&}errorTxt {
+			display: none;
+			color: #e60012;
+			padding: 5px 0;
+		}
+		#{&}description {
+			text-align: center;
+			margin-bottom: 23px;
+			@at-root {
+				%preDesc {
+					display: inline-block;
+					vertical-align: middle;
+				}
+				%preDescItem {
+					  border-top: 1px solid #000;
+					  border-bottom: 1px solid #000;
+					  vertical-align: middle;
+					  font-size: 0;
+					  display: inline-block;
+					  padding: 70px 7px;
+				}
+				#{&}__left {
+					@extend %preDesc;
+					@extend %preDescItem;
+					border-left: 1px solid #000;
+					margin-right: 40px;  							
+				}
+				#{&}__right {
+					@extend %preDesc;
+					@extend %preDescItem;
+					border-right: 1px solid #000;
+					margin-left: 40px;
+				}
+				#{&}__txt {
+					width: 330px;
+					font-size: 20px;
+					line-height: 1.8;
+					@extend %preDesc;
+				}
+			}
+		}
+		#{&}innerTxt {
+			padding: 0 10px;
+		}
+		#{&}txtLabel {
+			margin-bottom: 24px;
+		}
+		#{&}definition {
+			@at-root {
+				#{&}__title{
+					padding: 0px 0 3px 8px;
+					margin-bottom: 16px;
+					font-size: 16px;
+					font-weight: bold;
+					display: inline-block;
+					width: 116px;
+		  		}
+		  		#{&}__txt {
+		  			display: inline-block;
+				  	width: 350px;
+				  	vertical-align: middle;
+				  	border-left: 1px solid #000;
+				  	padding-left: 20px;
+		  		}
+		  		#{&}__coad {
+					display: block;
+				}
+	  		}
+		}
+		#{&}definitionInner {
+			@at-root {
+				#{&}__title {
+					display: inline-block;
+					border-bottom: 1px solid #000;
+					padding: 10px 0 5px;
+					margin-bottom: 10px;
+					font-size: 14px;
+					font-weight: bold;
+				}
+				#{&}__txt {
+					margin-bottom: 10px;
+					line-height: 1.5;
+				}
+
+			}
+		}
+		#{&}definitionTbl {
+			display: table;
+			margin-bottom: 24px;
+			@at-root {
+				#{&}__title{
+					display: table-cell;
+					width: 150px;
+					span {
+						border-left: 1px solid  #000;
+						padding-left: 10px;
+					}
+				}
+				#{&}__body{
+					display: table-cell;
+					li {
+						line-height: 1.8;
+					}
+				}
+				#{&}__num{
+					display: table-cell;
+				}
+				#{&}__txt{
+					display: table-cell;
+				}
+			}
+		}
+		#{&}contact {
+			background: #3d3d3d;
+			padding: 32px 0;
+			margin: 0;
+			@at-root {
+				%contactxt {
+					font-size: 0;
+					display: inline-block;
+					height: 35px;
+				}
+				#{&}__body {
+					width: 800px !important;
+  					margin: 0 auto 24px;
+				}
+				#{&}__tel {
+					@extend %contactxt;
+					width: 345px;
+					background-image: url(../img/common/txt_tel.png);
+				}
+				#{&}__fax {
+					@extend %contactxt;
+					width: 325px;
+					background-image: url(../img/common/txt_fax.png);
+				}
+			}
+		}
+		#{&}txt {
+			@at-root {
+				#{&}__desc {
+					font-size: 14px;
+					margin-bottom: 56px;
+				}
+			}
+		}
+		#{&}contactForm {
+			border-top: 1px #d2d2d2 dotted;
+			border-bottom: 1px #d2d2d2 dotted;
+			margin-bottom: 32px;
+			@at-root {
+				#{&}__body {
+					border-top: 1px #d2d2d2 dotted;
+					display: table;
+					width: 100%;
+					padding: 24px 0;
+					&:first-child {
+						border-top: none;
+					}
+				}
+				#{&}__title {
+					display: table-cell;
+					width: 200px;
+					padding: 0 50px;
+					vertical-align: middle;
+					font-weight: bold;
+				}
+				#{&}__txt {
+					display: table-cell;
+				}
+				%formBase {
+					height: 40px;
+					outline: none;
+					line-height: 1;
+					font-size: 16px;
+					padding: 0 10px;
+					&+.c-errorTxt.is-show {
+						margin-top: 10px;
+					}
+				}
+				#{&}__chkList {
+					margin-bottom: 16px;
+					@at-root {
+						#{&}--item{
+							margin-bottom: 5px;
+							input[type=checkbox] {
+								margin-right: 8px;
+  								vertical-align: middle;
+							}
+						}
+					}
+				}
+				#{&}__radio {
+					width: 80px;
+					display: inline-block;
+					input[type=radio] {
+						margin-right: 15px;
+					}
+					&+.c-errorTxt.is-show {
+						margin-top: 10px;
+					}
+				}
+				#{&}__long {
+					width: 670px;
+					@extend %formBase;
+				}
+				#{&}__half {
+					width: 335px;
+					@extend %formBase;
+				}
+				#{&}__age {
+					width: 80px;
+					margin-right: 12px;
+					@extend %formBase;
+				}
+				#{&}__zip {
+					width: 180px;
+					vertical-align: middle;
+					margin: 0 15px;
+					@extend %formBase;
+				}
+				#{&}__labelZip {
+					display: inline-block;
+					vertical-align: middle;
+				}
+			}
+		}
+		#{&}data {
+			margin-right: 20px;
+		}
+		#{&}exp {
+			position: relative;
+			overflow: hidden;
+			padding: 37px 0 32px;
+			margin: 0;
+			@at-root {
+				#{&}__bg{
+				  position: absolute;
+				  top: 0;
+				  left: 0;
+				  z-index: -1;
+				  width: 100%;
+				}
+			}
+			.bx-wrapper {
+				margin: 0 auto;
+			}
+		}
+		
+		#{&}philosophy {
+			margin-bottom: -30px;
+			@at-root {
+				#{&}__item {
+					font-size: 16px;
+					font-weight: bold;
+					line-height: 1;
+					margin-bottom: 28px;
+				}
+			}
+		}
+		#{&}keyvisual {
+			width: 100%;
+			min-width: 1280px;
+		}
+		#{&}descElement {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 198px;
+			padding: 20px;
+			display: none;
+			background: url(../img/works/bg_black_dot.png);
+			color: #fff;
+			@at-root {
+				#{&}__title {
+					margin-bottom: 20px;
+					text-align: center;
+					font-size: 24px;
+					small {
+						padding: 5px 0;
+						display: block;
+						font-size: 12px;
+						font-weight: lighter;
+					}
+				}
+				#{&}__txt {
+					  margin-bottom: 20px;
+					  font-weight: lighter;
+					  line-height: 1.7;
+				}
+				#{&}__link {
+					text-align: center;
+					margin-bottom: 9px;
+				}
+			}
+		}
+	}
+}
+.icn- {
+	@at-root {
+		%icn {
+			display: block;
+			font-size: 0;
+			margin-right: 20px;
+			vertical-align: middle;
+			width: 42px;
+			height: 24px;
+		}
+		#{&}person{
+			@extend %icn;
+			background-image: url(../img/sitemap/icn-01.jpg);
+			background-repeat: no-repeat;
+			background-position: center;
+		}
+		#{&}tie{
+			@extend %icn;
+			background-image: url(../img/sitemap/icn-02.jpg);
+			background-repeat: no-repeat;
+			background-position: center;
+		}
+		#{&}persons{
+			@extend %icn;
+			background-image: url(../img/sitemap/icn-03.jpg);
+			background-repeat: no-repeat;
+			background-position: center;
+		}
+		#{&}tel{
+			@extend %icn;
+			background-image: url(../img/sitemap/icn-04.jpg);
+			background-repeat: no-repeat;
+			background-position: center;
+		}
+		#{&}hose{
+			@extend %icn;
+			background-image: url(../img/sitemap/icn-05.jpg);
+			background-repeat: no-repeat;
+			background-position: center;
+		}
+	}
+}

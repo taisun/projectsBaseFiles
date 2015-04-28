@@ -1,0 +1,298 @@
+/*doc
+---
+title: Button
+name: Button
+category: Components CSS
+---
+
+##ボタン
+
+共通クラスなるc-buttonはsassの機能プレースホルダ%buttonとして@extendしています。<br>
+そのためクラスの記述はしていません。
+
+```html_example
+<a class="c-button__default"><span>button</span></a>
+```
+
+<br>
+
+表示                                                       |クラス               | 説明
+--------------------------------------------------------- | ------------------ | -----------------
+<a class="c-button__default"><span>Default</span></a>                  | `c-button__default`  | デフォルトボタン
+<a class="c-button__primary">Primary</a>                  | `c-button__primary`  |
+<a class="c-button__success">Success</a>                  | `c-button__success`  |
+<a class="c-button__info">Info</a>                        | `c-button__info`     |
+<a class="c-button__warning">Warning</a>                  | `c-button__warning`  |
+<a class="c-button__denger">Denger</a>                    | `c-button__denger`   |
+<a class="c-button__link">Link</a>                        | `c-button__linkv`     |
+
+
+##お問い合わせボタン
+```html_example
+<ul class="c-button__contact">
+	<li>
+		<a href="xxx.html"><span>不動産管理･売却･購入･運用等お気軽にご相談ください</span>お問い合わせはこちらから</a>
+	</li>
+</ul>
+```
+ */
+/*doc
+---
+title: Top Button
+name: Top Button
+category: Top
+---
+
+##物件情報をみる
+```html_example
+<ul class="c-button__infoRental">
+	<li>
+		<a href="xxx.html"><i class="c-icn__arrowRight">icon</i>物件情報をみる</a>
+	</li>
+</ul>
+```
+
+##お探しの物件が見つからないという方はこちらからお問い合わせください
+```html_example
+<ul class="c-button__moreTop">
+	<li>
+		<a href="xxx.html">お探しの物件が見つからないという方はこちらからお問い合わせください<i class="c-icn__arrowTopRight">icon</i></a>
+	</li>
+</ul>
+```
+*/
+
+
+%button {
+		display: block;
+		padding: 20px;
+		color: $color__white;
+		cursor: pointer;
+		text-align: center;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+.c-{
+	@at-root {
+		#{&}button__ {
+			@at-root {
+				#{&}default {
+					@extend %button;
+					display: inline-block;
+					text-align: center;
+					color: #000;
+					background: #eee;
+					border-radius: 3px;
+					border-bottom: 2px solid #aaa9a9;
+					padding: 20px 50px;
+					margin-bottom: 24px;
+					&:hover {
+						background: #dcdcdc;
+						color: #000;
+					}
+				}
+				#{&}primary {
+					background: #999;
+					border-radius: 3px;
+					border-bottom: 3px #6d6c6c solid;
+					color: #fff;
+					display: inline-block;
+					padding: 20px 50px;
+					&:hover {
+						color: #fff;
+						background: #5b5b5b;
+					}
+				}
+				#{&}success {
+					@extend %button;
+					text-align: center;
+					background: $btn-color-success;
+				}
+				#{&}warning {
+					@extend %button;
+					text-align: center;
+					background: $btn-color-warning;
+				}
+				#{&}denger {
+					@extend %button;
+					text-align: center;
+					background: $btn-color-denger;
+				}
+				#{&}link {
+					@extend %button;
+					text-align: center;
+					color: $color__black;
+					background: none;
+				}
+				#{&}info {
+					@extend %button;
+					text-align: center;
+					background: $btn-color-info;
+				}
+				#{&}toggle {
+					@extend %button;
+					text-align: center;
+					border-bottom: 1px solid #000;
+					background: #eee;
+					color: #000;
+					font-size: 16px;
+					i {
+						background: url('../img/icn_toggle-arrow_down.png') no-repeat;
+						background-size: contain;
+						font-size: 0;
+						padding: 8px 12px;
+						vertical-align: middle;
+						margin-left: 5px;
+					}
+					&.is-toggle {
+						i {
+							background: url('../img/icn_toggle-arrow_up.png') no-repeat;
+							background-size: contain;
+							margin-left: 10px;
+						}
+					}
+
+				}
+				#{&}contact {
+					width: 100%;
+					a{
+						background: url('../img/common/btn_contact.png');
+						width: 564px;
+  						height: 61px;
+						display: block;
+						font-size: 0;
+						margin: 0 auto;
+					}
+					@at-root{
+						#{&}Top {
+							li{
+								text-align: right;
+							}
+							a{
+								background: url('../img/top/btn_top04.png');
+								width: 432px;
+								height: 82px;
+								display: inline-block;
+								font-size: 0;
+							}
+						}
+					}
+				}
+				#{&}submit {
+					text-align: center;
+					margin-bottom: 24px;
+				}
+				#{&}more {
+					span {
+						display: inline-block;
+						width: 143px;
+						height: 42px;
+						background: url('../img/common/btn_more.png');
+					}
+					font-size: 0;
+					text-align: right;
+				}
+				#{&}zoom {
+					display: inline-block;
+					padding: 8px 16px 8px 26px;
+					border: 1px solid #fff;
+					border-radius: 3px;
+					font-size: 16px;
+					color: #fff;
+				}
+				#{&}toTop {
+					font-size: 0;
+					display: inline-block;
+					background: url("../img/common/btn_top.jpg");
+					width: 87px;
+					height: 64px;
+				}
+			}
+		}
+		#{&}icn {
+			@at-root {
+				%icn {
+					font-size: 0;
+					display: inline-block;
+				}
+				#{&}__required {
+					  font-size: 12px;
+					  padding: 3px 8px;
+					  background: red;
+					  border-radius: 4px;
+					  color: #fff;
+					  font-weight: lighter;
+					  margin-left: 15px;
+				}
+				#{&}__new {
+					@extend %icn;
+					  background-image: url(../img/common/icn_new.png);
+					  width: 41px;
+					  height: 20px;
+					  margin-left: 10px;
+					  vertical-align: middle;
+				}
+				#{&}__popup {
+					@extend %icn;
+					background-image: url("../img/company/icn_popup.gif");
+					width: 13px;
+					height: 12px;
+					vertical-align: middle;
+					margin: -2px 0 0 5px;
+				}
+				#{&}__glass {
+					@extend %icn;
+					background-image: url(../img/works/icn_zoom.png);
+					background-repeat: no-repeat;
+					width: 22px;
+					height: 22px;
+					vertical-align: middle;
+					margin: -2px 0 0 15px;
+				}
+				#{&}__arrowBottom {
+					@extend %icn;
+					background-image: url(../img/works/icn_arrow_down.png);
+					background-repeat: no-repeat;
+					width: 18px;
+					height: 9px;
+					vertical-align: middle;
+					margin: -2px 0 0 15px;
+				}
+				#{&}__arrowRight {
+					@extend %icn;
+					background-image: url("../img/icn/icn_arrow01.png");
+					width: 12px;
+					height: 12px;
+					vertical-align: middle;
+					margin: -2px 12px 0 0;
+				}
+				#{&}__arrowTopRight {
+					@extend %icn;
+					margin-left: 15px;
+					width: 9px;
+					height: 13px;
+					vertical-align: middle;
+					background: url("../img/icn/icn_arrow02.png"); 
+				}
+			}
+		}
+		#{&}txtLabel {
+			@at-root {
+				%labels {
+					padding: 2px 10px;
+					color: #fff;
+					font-size: 12px;
+				}
+				#{&}__new {
+					@extend %labels;
+					background: #1c7ad8;
+				}
+				#{&}__default {
+					@extend %labels;
+					background: #9b9b9a;
+				} 
+			}
+		}
+	}
+}

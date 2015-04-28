@@ -1,0 +1,399 @@
+/*doc
+---
+title: Navigaation（ナビゲーション）
+name: Navigaation（ナビゲーション）
+category: Components CSS
+---
+
+ナビゲーションのマークアップです。
+
+##ヘッダー
+```html_example
+<header id="header" class="l-header">
+	<div class="l-inner g-rows">
+		<p class="c-logo g-col__4"><a href="/"><img width="83" height="82" src="/app/img/common/logo.png" alt="東京賃貸組"></a></p>
+		<nav class="c-subNav g-col__8">
+			<ul class="c-subNav__body">
+				<li class="c-subNav__item--home"><a href="/">HOME</a></li><li class="c-subNav__item--recruit"><a href="/">RECRUIT</a></li><li class="c-subNav__item--sitemap"><a href="/">SITEMAP</a></li>
+			</ul>
+		</nav>
+	</div>
+</header>
+```
+
+##グローバルナビゲーション
+
+基本的なグローバルナビゲーションのマークアップになります。
+
+```html_example
+<nav class="c-gloNav">
+	<ul class="c-gloNav__body">
+		<li class="c-gloNav__item--top"><a href="/"><span>TOP</span></a></li><li class="c-gloNav__item--owner is-currentMenu"><a href="/"><span>OWNER</span></a></li><li class="c-gloNav__item--tenant"><a href="/"><span>TENANT</span></a></li><li class="c-gloNav__item--shop"><a href="/"><span>SHOP</span></a></li><li class="c-gloNav__item--contact"><a href="/"><span>CONTACT</span></a></li>
+	</ul>
+</nav>
+```
+
+##フッター
+
+```html_example
+<footer class="l-footer">
+	<nav class="c-footerNav">
+		<ul class="c-footerNav__body">
+			<li class="c-footerNav__item"><a href="/">ホーム</a></li>
+			<li class="c-footerNav__item"><a href="/">オーナー</a></li>
+			<li class="c-footerNav__item"><a href="/">ご入居者の方</a></li>
+			<li class="c-footerNav__item"><a href="/">店舗案内</a></li>
+			<li class="c-footerNav__item"><a href="#">サイトマップ</a></li>
+		</ul>
+	</nav>
+</footer>
+```
+
+##パンくずリスト
+
+パンくずリストです。
+
+```html_example
+<nav class="c-breadCrumb">
+	<ul class="c-breadCrumb__body">
+		<li class="c-breadCrumb__item"><a class="c-breadCrumb__link">パンくず１</a><span class="c-breadCrumb__arrow">></span></li>
+		<li class="c-breadCrumb__item"><a class="c-breadCrumb__link">パンくず２</a><span class="c-breadCrumb__arrow">></span></li>
+		<li class="c-breadCrumb__item"><a class="c-breadCrumb__link">パンくず３</a><span class="c-breadCrumb__arrow">></span></li>
+		<li class="c-breadCrumb__item is-page">パンくず4</li>
+	</ul>
+</nav>
+```
+
+##トップへ戻る
+
+トップへ戻るボタンです。
+
+```html_example
+<ul class="c-pageTop">
+	<li class="c-pageTop__item">
+		<a href="#" class="c-pageTop__text">トップへ戻る</a>
+	</li>
+</ul>
+
+```
+ */
+/*doc
+---
+title: Top Navigation
+name: Top Navigation
+category: Top
+---
+
+##トップヘッダー
+
+トップ画面のヘッダーナビゲーションのマークアップになります。
+
+```html_example
+<header id="header" class="l-header__top">
+	<div class="l-inner is-topHead g-rows">
+		<p class="c-logo__top g-col__4"><a href="/"><img width="134" height="167" src="/app/img/common/top_logo.png" alt="東京賃貸組"></a></p>
+		<nav class="c-gloNav__top g-col__8">
+			<ul class="c-gloNav__top--body">
+				<li class="c-gloNav__top--item-one"><a href="/">OWNER</a></li><li class="c-gloNav__top--item-two"><a href="/">TENANT</a></li><li class="c-gloNav__top--item-third"><a href="/">COMPANY</a></li><li class="c-gloNav__top--item-four"><a href="/">CONTACT</a></li>
+			</ul>
+		</nav>
+	</div>
+	<div class="c-topvisual u-img__max">
+		<a href="/"><img src="/app/img/top/img_top.jpg" alt=""></a>
+	</div>
+</header>
+```
+*/
+%gloNavItemStyle {
+	float: left;
+	font-size: 0;
+	background: url("../../img/dest/sprite.png") no-repeat;
+	margin-left: 20px;
+	a {
+		display: block;
+		height: 100%;
+		width: 100%;
+	}
+}
+
+%c-categoryStyle {
+	float: right;
+	height: 80px;
+	width: 80px;
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+
+.c-{
+	@at-root {
+		#{&}logo {
+			vertical-align: top;
+			text-align: left;
+			a {
+				font-size: 0;
+				display: block;
+				background-image: url(../img/common/logo.png);
+				width: 322px;
+				height: 82px;
+			}
+		}
+		#{&}gloNav {
+			overflow: hidden;
+			margin-top: 9px;
+			@at-root {
+				#{&}__body {
+					display: table;
+ 					width: 100%;
+ 					a {
+						&:hover {
+							border-bottom: 4px solid #434343;
+						}
+					}
+				}
+				#{&}__item {
+					display: table;
+
+					@at-root {
+						%gloNav {
+							display: table-cell;
+							width: 20%;
+							&:hover {
+								background-image: url("../img/common/bg_gNav_active.png"); 
+							}
+						}
+						%gloNavLink {
+							width: 97px;
+							height: 54px;
+							display: inline-block;
+							font-size: 0;
+							text-align: center;
+							span {
+								display: block;
+								margin: 0 auto;
+							}
+						}
+						%current {
+							background: url("../img/common/bg_gNav_active.png") !important;
+						}
+						#{&}--mission {
+							@extend %gloNav;
+							a {
+								@extend %gloNavLink;
+								span {
+									background-image: url("../img/common/txt_gNav05.png");
+									width: 57px;
+									height: 31px;
+								}
+							}
+						}
+						#{&}--business {
+							@extend %gloNav;
+							a {
+								@extend %gloNavLink;
+								span {
+									background-image: url("../img/common/txt_gNav01.png");
+									width: 65px;
+									height: 32px;
+								}
+							}
+						}
+						#{&}--works {
+							@extend %gloNav;
+							a {
+								@extend %gloNavLink;
+								span {
+									background-image: url("../img/common/txt_gNav02.png");
+									width: 46px;
+									height: 31px;
+								}
+							}
+						}
+						#{&}--company {
+							@extend %gloNav;
+							a {
+								@extend %gloNavLink;
+								span {
+									background-image: url("../img/common/txt_gNav03.png");
+									width: 63px;
+									height: 31px;
+								}
+							}
+						}
+						#{&}--contact {
+							@extend %gloNav;
+							a {
+								@extend %gloNavLink;
+								span {
+									background-image: url("../img/common/txt_gNav04.png");
+									width: 66px;
+									height: 31px;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		#{&}subNav {
+			text-align: right;
+			@at-root {
+				#{&}__item{
+					@at-root {
+						%subNav{
+							display: inline-block;
+							margin-right: 16px;
+							a {
+								font-size: 0;
+								display: block;
+								width: 100%;
+							}
+						}
+						#{&}--home {
+							@extend %subNav;
+							a {
+								background: url("../img/common/txt_head02.png");
+								width: 53px;
+								height: 11px;
+							}
+						}
+						#{&}--recruit {
+							@extend %subNav;
+							a {
+								background: url("../img/common/txt_head01.png");
+								width: 64px;
+								height: 11px;
+							}	
+						}
+						#{&}--sitemap {
+							@extend %subNav;
+							a {
+								background: url("../img/common/txt_head03.png");
+								width: 64px;
+								height: 11px;
+							}
+						}
+					}
+				}
+			}
+		}
+		#{&}breadCrumb {
+			display: table;
+			width: 100%;
+			padding: 24px 0 32px;
+			@at-root {
+				#{&}__body {
+					width: 1000px;
+					margin: 0 auto;
+				}
+				#{&}__item {
+					display: table-cell;
+					font-size: 13px;
+				}
+				#{&}__link {
+					margin-right: 8px;
+					color: #2f2f2f;
+				}
+				#{&}__arrow {
+					margin-right: 8px;
+				}
+			}
+		}
+		#{&}tabs {
+			margin-bottom: 25px;
+			display: table;
+			width: 100%;
+			@at-root {
+				#{&}__item {
+					display: table-cell;
+					width: 540px;
+					text-align: center;
+					&:first-child {
+						border-right: 1px solid #000;
+					}
+				}
+
+				#{selector-append(&, "__btn")}{
+					@at-root {
+						%tabs {
+							display: block;
+							width: 100%;
+							padding: 10px 0;
+							border-top: 8px solid #cccccc;
+							border-bottom: 1px solid #000;
+						}
+						%img {
+							display: block;
+							font-size: 0;
+							background-image: url("../../img/dest/sprite.png");
+							margin: 0 auto;
+						}
+						#{&}--mens{
+							@extend %tabs;
+							& > span {
+								@extend %img;
+								background-position: -255px -58px;
+								width: 109px;
+								height: 28px;
+							}
+						}
+						#{&}--ladies {
+							@extend %tabs;
+							& > span {
+								@extend %img;
+								background-position: 0px -108px;
+								width: 135px;
+								height: 28px;
+							}
+						}
+					}
+				}
+			}
+		}
+		#{&}pageNav {
+			  width: 1000px;
+			  margin: 0 auto 50px;
+			  border-top: 1px solid #ddd;
+			  border-bottom: 1px solid #ddd;
+			  @at-root {
+			  	#{&}__body {
+			  		padding: 15px 0;
+			  	}
+			  	#{&}__item {
+			  		display: inline-block;
+					text-align: center;
+					width: 33%;
+					border-left: 1px solid #ddd;
+					&:first-child {
+						border-left: none;
+					}
+					a {
+						width: 100%;
+						display: inline-block;
+						padding: 5px 0;
+					}
+			  	}
+			  }
+		}
+		#{&}pageTop {
+			width: 100%;
+			display: inline-block;
+			right: 10px;
+			bottom: 100px;
+			@at-root {
+				#{&}__item {
+					width: 940px;
+					margin: 0 auto;
+					text-align: right;
+				}
+				#{&}__text {
+					display: inline-block;
+					width: 81px;
+					height: 11px;
+					background-image: url("../img/common/btn_top.png");
+					font-size: 0;
+				}
+			}
+		}
+	}
+}

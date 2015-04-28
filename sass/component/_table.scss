@@ -1,0 +1,133 @@
+/*doc
+---
+title: table
+name: table
+category: Components CSS
+---
+##table
+```html_example
+<div class="c-tableBorder">
+	<table>
+		<tbody>
+			<tr>
+				<th>会社名</th>
+				<td>株式会社ブッシュクロフィード</td>
+			</tr>
+			<tr>
+				<th>代表取締役</th>
+				<td>萩原アヤ子</td>
+			</tr>
+			<tr>
+				<th>所在地</th>
+				<td>
+					<span>〒150-0021</span>
+					東京都渋谷区恵比寿西1-10-10若葉西ビル7F
+				</td>
+			</tr>
+			<tr>
+				<th>TEL</th>
+				<td>03-6455-3993</td>
+			</tr>
+			<tr>
+				<th>FAX</th>
+				<td>03-6455-3995</td>
+			</tr>
+			<tr>
+				<th>設立</th>
+				<td>2010年6月</td>
+			</tr>
+			<tr>
+				<th>資本金</th>
+				<td>10,000,000円</td>
+			</tr>
+			<tr>
+				<th>事業内容</th>
+				<td>デベロップメント事業、ソリューション事業<br>アセットメマネジメント事業、プロパティマネジメント事業</td>
+			</tr>
+			<tr>
+				<th>免許・資格</th>
+				<td>宅地建物取引業　東京都知事(1)第92440号<br>宅地建物取引主任者・2級建築士・賃貸不動産経営管理士</td>
+			</tr>
+			<tr>
+				<th>加盟団体</th>
+				<td>社団法人　全日本不動産協会・公営社団法人　不動産保証協会</td>
+			</tr>
+			<tr>
+				<th>グループ会社</th>
+				<td>株式会社B・Cプロパティ</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+```
+
+##table noborder 
+
+```html_example 
+<div class="c-tableNoBorder">
+	<table>
+		<tbody>
+			<tr class="first">
+				<th>会社名</th>
+				<td>東京賃貸組　株式会社ブッシュクロフィード</td
+			</tr>
+			<tr>
+				<th>設立</th>
+				<td>2010年6月</td
+			</tr>
+			<tr>
+				<th>所在住所</th>
+				<td>〒150-0021 東京都渋谷区恵比寿西1-10-10若葉西ビル7F</td
+			</tr>
+			<tr>
+				<th>事業内容</th>
+				<td>不動産売買・賃貸・管理　※東京都知事（1）第92440号</td
+			</tr>
+			<tr class="last">
+				<th>ホームページ</th>
+				<td>http://www.tokyo-chintaigumi.com/</td
+			</tr>
+		</tbody>
+	</table>
+</div>
+```
+*/
+
+.c-{
+	@at-root {
+		#{&}tableBorder {
+			border: 1px solid #000;
+			line-height: 1.5;
+		}
+		#{&}tableNoBorder {
+			border: 1px solid #000;
+			%noTable {
+				padding: 15px 0 30px 30px;
+				border: none;
+				background: #fff;
+			}
+			tr {
+				border: none;
+			}
+			th {
+				@extend %noTable;
+				border-right: 1px solid #000;
+				font-weight: normal;
+				width: 125px;
+			}
+			td {
+				@extend %noTable;
+			}
+			.first {
+				th, td{
+					padding-top: 30px;
+				}
+			}
+			.last {
+				th, td{
+					padding-bottom: 30px;
+				}
+			}
+		}
+	}
+}

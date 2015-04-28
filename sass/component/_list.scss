@@ -1,0 +1,248 @@
+/*doc
+---
+title: List（リスト）
+name: List（リスト）
+category: Components CSS
+---
+
+基本的なリストのマークアップです。
+
+##ナンバー付きリスト
+
+```html_example
+<ol class="c-listNumber">
+	<li class="c-listNumber__item">
+		<dl class="c-listNumber__body">
+			<dt class="c-listNumber__num">(1)</dt>
+			<dd class="c-listNumber__txt">家の中のガス器具が止まっているのを確認してから、ガスメーターの前に行きます。</dd>
+		</dl>
+	</li>
+	<li class="c-listNumber__item">
+		<dl class="c-listNumber__body">
+			<dt class="c-listNumber__num">(2)</dt>
+			<dd class="c-listNumber__txt">
+				<span>ご自分のガスメータであることを確認してください。</span>
+				<ul>
+					<li>アパートの場合はまとまって一か所に設置されている場合が多いです。</li>
+					<li>玄関の周辺になければ建物の周囲を確認してください。</li>
+				</ul>
+			</dd>
+		</dl>
+	</li>
+	<li class="c-listNumber__item">
+		<dl class="c-listNumber__body">
+			<dt class="c-listNumber__num">(3)</dt>
+			<dd class="c-listNumber__txt">ランプが点滅していれば、地震や風、あるいは人が触れたことによりガスがロックされている状態です。</dd>
+		</dl>
+	</li>
+	<li class="c-listNumber__item">
+		<dlv class="c-listNumber__body">
+			<dt class="c-listNumber__num">(4)</dt>
+			<dd>キャップなどがはまっているリセットボタンを探し、キャップを外します。</dd>
+		</dl>
+	</li>
+	<li class="c-listNumber__item">
+		<dl class="c-listNumber__body">
+			<dt class="c-listNumber__num">(5)</dt>
+			<dd class="c-listNumber__txt">復帰ボタンを押すと、しばらくして点滅していたランプの点滅が止まります。手を放して大丈夫です。</dd>
+		</dl>
+	</li>
+	<li class="c-listNumber__item">
+		<dl class="c-listNumber__body">
+			<dt class="c-listNumber__num">(6)</dt>
+			<dd class="c-listNumber__txt">ランプは再び点滅しますが約3分後にランプの点滅が止まり使用可能になります。</dd>
+		</dl>
+	</li>
+</ol>
+```
+##リスト内リンク
+
+```html_example
+	<ul class="c-listLink">
+		<li class="c-listLink__item">・ロータンクに関するトラブルに関しては<a href="">こちら</a></li>
+		<li class="c-listLink__item">・止水栓の閉め方については<a href="">こちら</a></li>
+	</ul>
+```
+##サイトマップリスト
+
+```html_example
+	<ul class="c-siteMaplist">
+		<li class="c-siteMaplist__item"><a href="/owner"><i class="icn-person">icon</i>オーナー様</a></li>
+		<li class="c-siteMaplist__item"><a href="/recruit"><i class="icn-tie">icon</i>採用情報</a></li>
+		<li class="c-siteMaplist__item"><a href="/tenant"><i class="icn-persons">icon</i>入居者様</a></li>
+		<li class="c-siteMaplist__item"><a href="http://bush-clofied.co.jp/contact/" target="_blank"><i class="icn-tel">icon</i>お問い合わせ</a></li>
+		<li class="c-siteMaplist__item"><a href="/shop"><i class="icn-hose">icon</i>店舗案内</a></li>
+	</ul>
+```
+ */
+
+/*doc
+---
+title: Top Lit
+name: Top Lit
+category: Top
+---
+
+##ニュースリスト
+
+```html_example
+<ul class="c-listNews">
+	<li class="c-listNews__item">
+		<dl>
+			<dt class="c-listNews__data">2015.01.01</dt>
+			<dd class="c-listNews__link"><a href="xxx.html">テキストテキストテキストテキストテキスト<i class="c-icn__pdf">pdf</i></a></dd>
+		</dl>
+	</li>
+	<li class="c-listNews__item">
+		<dl class="c-listNews__body">
+			<dt class="c-listNews__data">2015.01.01</dt>
+			<dd class="c-listNews__link"><a href="xxx.html">テキストテキストテキストテキストテキスト<i class="c-icn__pdf">pdf</i></a></dd>
+		</dl>
+	</li>
+	<li class="c-listNews__item">
+		<dl class="c-listNews__body">
+			<dt class="c-listNews__data">2015.01.01</dt>
+			<dd class="c-listNews__link"><a href="xxx.html">テキストテキストテキストテキストテキスト<i class="c-icn__pdf">pdf</i></a></dd>
+		</dl>
+	</li>
+	<li class="c-listNews__item">
+		<dl class="c-listNews__body">
+			<dt class="c-listNews__data">2015.01.01</dt>
+			<dd class="c-listNews__link"><a href="xxx.html">テキストテキストテキストテキストテキスト<i class="c-icn__pdf">pdf</i></a></dd>
+		</dl>
+	</li>
+	<li class="c-listNews__item">
+		<dl class="c-listNews__body">
+			<dt class="c-listNews__data">2015.01.01</dt>
+			<dd class="c-listNews__link"><a href="xxx.html">テキストテキストテキストテキストテキスト<i class="c-icn__pdf">pdf</i></a></dd>
+		</dl>
+	</li>
+</ul>
+```
+##ニュースリスト
+
+```html_example
+<ul class="c-labeList">
+	<li class="c-labeList__item">
+		<span class="c-txtLabel__new">NEW!</span>
+	</li>
+	<li class="c-labeList__item">
+		<span class="c-txtLabel__default">駅から徒歩５分</span>
+	</li>
+</ul>
+```
+ */
+.c-listLink {
+	@at-root {
+		#{&}__item {
+			margin-bottom: 20px;
+			a {
+				color: #d86f19;
+				text-decoration: underline;
+			}
+		}
+	}
+}
+.c-listNumber {
+	@at-root {
+		#{&}__item {
+			  line-height: 1.6;
+		}
+		#{&}__body {
+			display: table;
+		}
+		%tables {
+			display: table-cell;
+		}
+		#{&}__num {
+			@extend %tables;
+			padding-right: 8px;
+		}
+		#{&}__txt {
+			@extend %tables;
+		}
+	}
+}
+.c- {
+	@at-root {
+		#{&}listNews {
+			$boreder: 1px solid #e0e0e0;
+			border-top: $boreder;
+			border-bottom: $boreder;
+			padding: 10px 10px 5px;
+			@at-root {
+				#{&}__item {
+					display: block;
+					width: 100%;
+					margin-bottom: 5px;
+				}
+				%innnerCont {
+					display: table-cell;
+				}
+				#{&}__data {
+					@extend %innnerCont;
+				}
+				#{&}__link {
+					@extend %innnerCont;
+					padding-left: 30px;
+					a {
+						color: #000;
+					}
+				}
+			}
+		}
+		#{&}labeList{
+			margin-bottom: 10px;
+			@at-root {
+				#{&}__item{
+					display: inline-block;
+				}
+			}
+		}
+		#{&}elementList {
+			@at-root {
+				#{&}__item {
+					position: relative;
+					margin-bottom: 15px;
+					&:hover {
+						dl {
+							display: block;
+						}
+					}
+				
+				}
+			}
+		}
+		#{&}tableList {
+			  display: table;
+			  @at-root {
+			  	#{&}__item {
+					display: inline-block;
+					width: 50%;
+					vertical-align: text-top;
+					margin-bottom: 15px;
+				}
+			  }
+		}
+		#{&}siteMaplist {
+			width: 700px;
+  			margin: 0 auto;
+			@at-root {
+				#{&}__item {
+					display: inline-block;
+					width: 48%;
+					margin-bottom: 35px;
+					border-left: 8px solid #95c276;
+					a {
+						display: inline-block;
+						width: 180px;
+						margin-left: 20px;
+						background-image: url(../img/sitemap/icn-arrow.jpg);
+						background-repeat: no-repeat;
+						background-position: right center;
+					}
+				}
+			}
+		}
+	}
+}

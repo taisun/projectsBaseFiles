@@ -1,0 +1,13 @@
+{
+  "name": "package",
+  "version": "0.0.0",
+  "dependencies": {
+    "bx-slider.js": "~4.2.2",
+    "jquery-legacy": "jquery#^1",
+    "jquery-modern": "jquery#~2.1.3",
+    "flexslider": "*"
+  },
+  "devDependencies": {
+    "html5shiv": "~3.7.2"
+  }
+}
